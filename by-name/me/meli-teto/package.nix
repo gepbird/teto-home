@@ -4,6 +4,7 @@
   meli,
   nettle,
   rustPlatform,
+  nix-update-script,
 }:
 meli.overrideAttrs (old: rec {
   pname = old.pname + "-tetos";
@@ -26,5 +27,11 @@ meli.overrideAttrs (old: rec {
   cargoDeps = rustPlatform.fetchCargoVendor {
     inherit src;
     hash = "sha256-6CdrdAvJbxnQRzhuT6DrR/DcgHvSw4UJHOoqfdtnxX0=";
+  };
+
+  passthru.updateScript = nix-update-script {
+    extraArgs = [
+      "--version=branch=master"
+    ];
   };
 })
