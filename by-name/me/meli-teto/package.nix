@@ -31,6 +31,7 @@ meli.overrideAttrs (old: rec {
 
   passthru.updateScript = nix-update-script {
     extraArgs = [
+      "-F"
       "--version=branch=master"
     ];
   };
