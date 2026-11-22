@@ -451,8 +451,6 @@
 
             inherit (self.inputs.jujutsu.packages.${system}) jujutsu;
 
-            meli-teto = nixpkgs.legacyPackages.${system}.callPackage ./by-name/me/meli-teto/package.nix { };
-
             inherit (tetosPkgs)
               memento-whisper
               #   # sway-scratchpad
