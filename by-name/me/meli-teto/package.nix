@@ -29,10 +29,10 @@ meli.overrideAttrs (old: rec {
     hash = "sha256-6CdrdAvJbxnQRzhuT6DrR/DcgHvSw4UJHOoqfdtnxX0=";
   };
 
-  passthru.updateScript = nix-update-script {
-    extraArgs = [
-      "-F"
-      "--version=branch=master"
-    ];
-  };
+  passthru.updateScript = [
+    "nix-update"
+    "-F"
+    "--version=branch=master"
+  ];
+
 })
