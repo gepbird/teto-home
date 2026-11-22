@@ -18,6 +18,6 @@ jobs:
           # TODO reference the flake one ?
           nix_path: "nixpkgs=https://github.com/NixOS/nixpkgs/archive/refs/heads/nixos-unstable.tar.gz"
       - name: Update flake packages
-        uses: gepbird/nix-update-action@v3.1.3
+        uses: gepbird/nix-update-action@8b235d2a3e75adac3f4f8ac351becb8f349fe4f5
         with:
           packages: "meli-teto"
