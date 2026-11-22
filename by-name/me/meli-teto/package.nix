@@ -9,11 +9,11 @@
 meli.overrideAttrs (old: rec {
   pname = old.pname + "-tetos";
   # Track development commits with: nix-update -F meli-teto --version=branch
-  version = "0.8.13-unstable-2026-10-08";
+  version = "0-unstable-2026-11-22";
   src = fetchgit {
     url = "https://git.meli-email.org/meli/meli.git";
-    rev = "7cf9e3c24cd60ffadbde47abf309ae0bca52cfe9";
-    hash = "sha256-A48VXmpYOflAJL8nJAXXqG0aEjfP5ZVRa+0+EaXcc/Q=";
+    rev = "edc285da612ecda7911be9a514921aaff534462d";
+    hash = "sha256-rDNJUVUZpHZAdcC4S2/bLGC6LvKziZxHOg5lQTSSHOs=";
   };
 
   nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
@@ -26,7 +26,7 @@ meli.overrideAttrs (old: rec {
   # so changing cargoHash alone does not recreate the vendor derivation.
   cargoDeps = rustPlatform.fetchCargoVendor {
     inherit src;
-    hash = "sha256-6CdrdAvJbxnQRzhuT6DrR/DcgHvSw4UJHOoqfdtnxX0=";
+    hash = "sha256-+G839h3hOWr8bASEXk3RPHKQoXOqMfDpzrBjR4UzYPw=";
   };
 
   passthru.updateScript = [
